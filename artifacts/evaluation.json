@@ -1,0 +1,166 @@
+{
+  "data_kind": "fully synthetic; no real industrial measurements",
+  "seed": 42,
+  "target": "at least one failure event in next 6 hours",
+  "feature_count": 16,
+  "split_policy": "60/20/20 chronological; labels crossing boundaries purged; no random split",
+  "splits": {
+    "train": {
+      "rows": 8504,
+      "first_feature_hour": 11,
+      "last_feature_hour": 1073,
+      "last_label_hour": 1079,
+      "prevalence": 0.13628880526810913
+    },
+    "validation": {
+      "rows": 2832,
+      "first_feature_hour": 1080,
+      "last_feature_hour": 1433,
+      "last_label_hour": 1439,
+      "prevalence": 0.1338276836158192
+    },
+    "test": {
+      "rows": 2832,
+      "first_feature_hour": 1440,
+      "last_feature_hour": 1793,
+      "last_label_hour": 1799,
+      "prevalence": 0.14018361581920905
+    }
+  },
+  "threshold_selection": "validation F1 only; test never used for fitting or selection",
+  "test": {
+    "logistic_regression": {
+      "rows": 2832,
+      "prevalence": 0.14018361581920905,
+      "threshold": 0.28,
+      "precision": 0.3325740318906606,
+      "recall": 0.3677581863979849,
+      "f1": 0.3492822966507177,
+      "average_precision": 0.3265386768626744,
+      "roc_auc": 0.7274238513698736,
+      "brier_score": 0.10961530280003781,
+      "confusion": {
+        "tp": 146,
+        "fp": 293,
+        "fn": 251,
+        "tn": 2142
+      }
+    },
+    "train_prevalence_baseline": {
+      "rows": 2832,
+      "prevalence": 0.14018361581920905,
+      "threshold": 0.13,
+      "precision": 0.14018361581920905,
+      "recall": 1.0,
+      "f1": 0.2458965624032208,
+      "average_precision": 0.14018361581920905,
+      "roc_auc": 0.5,
+      "brier_score": 0.1205473392242904,
+      "confusion": {
+        "tp": 397,
+        "fp": 2435,
+        "fn": 0,
+        "tn": 0
+      }
+    },
+    "temperature_baseline": {
+      "rows": 2832,
+      "prevalence": 0.14018361581920905,
+      "threshold": 0.75,
+      "precision": 0.2846441947565543,
+      "recall": 0.38287153652392947,
+      "f1": 0.32653061224489793,
+      "average_precision": 0.28516505831330263,
+      "roc_auc": 0.7072540977247219,
+      "brier_score": 0.28814903968040545,
+      "confusion": {
+        "tp": 152,
+        "fp": 382,
+        "fn": 245,
+        "tn": 2053
+      }
+    }
+  },
+  "drift_test_vs_train": [
+    {
+      "feature": "vibration_mean12",
+      "psi": 0.09201020917860583,
+      "comparison_rows": 2832
+    },
+    {
+      "feature": "pressure_mean12",
+      "psi": 0.08066909532341622,
+      "comparison_rows": 2832
+    },
+    {
+      "feature": "vibration_current",
+      "psi": 0.06653189564366616,
+      "comparison_rows": 2832
+    },
+    {
+      "feature": "temperature_mean12",
+      "psi": 0.0641044184481784,
+      "comparison_rows": 2832
+    },
+    {
+      "feature": "pressure_current",
+      "psi": 0.0628533657921266,
+      "comparison_rows": 2832
+    },
+    {
+      "feature": "temperature_current",
+      "psi": 0.053774170407429114,
+      "comparison_rows": 2832
+    },
+    {
+      "feature": "vibration_std12",
+      "psi": 0.03143571332482381,
+      "comparison_rows": 2832
+    },
+    {
+      "feature": "temperature_std12",
+      "psi": 0.02430608906332199,
+      "comparison_rows": 2832
+    },
+    {
+      "feature": "temperature_trend12",
+      "psi": 0.016019649686123922,
+      "comparison_rows": 2832
+    },
+    {
+      "feature": "vibration_trend12",
+      "psi": 0.014027836031983109,
+      "comparison_rows": 2832
+    },
+    {
+      "feature": "load_mean12",
+      "psi": 0.013445232408929779,
+      "comparison_rows": 2832
+    },
+    {
+      "feature": "pressure_std12",
+      "psi": 0.013381569172323124,
+      "comparison_rows": 2832
+    },
+    {
+      "feature": "load_std12",
+      "psi": 0.009763162937673394,
+      "comparison_rows": 2832
+    },
+    {
+      "feature": "pressure_trend12",
+      "psi": 0.007483449461415199,
+      "comparison_rows": 2832
+    },
+    {
+      "feature": "load_current",
+      "psi": 0.006682540616675979,
+      "comparison_rows": 2832
+    },
+    {
+      "feature": "load_trend12",
+      "psi": 0.0042040867121659305,
+      "comparison_rows": 2832
+    }
+  ]
+}

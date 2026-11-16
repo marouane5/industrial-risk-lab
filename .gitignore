@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.env
+.env.*
+build/
+dist/
+artifacts/synthetic_sensors.csv
+artifacts/test_predictions.csv
+artifacts/batch_predictions.csv
+artifacts/custom/
